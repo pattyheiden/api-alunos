@@ -88,7 +88,7 @@ public class AlunoServiceTest {
                 8
         );
         AlunoRequest aluno2 = new AlunoRequest(
-                "Henrique Heiden",
+                "Henrique",
                 "henrique@gmail.com",
                 "Senha@456",
                 LocalDate.of(1998, 3, 15),
@@ -115,7 +115,7 @@ public class AlunoServiceTest {
 
         Assertions.assertThat(lista)
                 .extracting(AlunoResponse::getNome)
-                .containsExactly("Patricia", "Lucas");
+                .containsExactly("Patricia", "Henrique");
     }
 
     @Test
@@ -243,7 +243,7 @@ public class AlunoServiceTest {
                 8
         );
         AlunoRequest aluno2 = new AlunoRequest(
-                "Henrique Heiden",
+                "Henrique",
                 "henrique@gmail.com",
                 "Senha@456",
                 LocalDate.of(1998, 3, 15),
@@ -254,8 +254,8 @@ public class AlunoServiceTest {
         AlunoResponse cadastrado2 = service.cadastrarAluno(aluno2);
 
         AlunoRequest requestConflitante = new AlunoRequest(
-                "Henrique Heiden",
-                "henrique@gmail.com",
+                "Henrique",
+                "patricia@gmail.com",
                 "Senha@456",
                 LocalDate.of(1998, 3, 15),
                 8
